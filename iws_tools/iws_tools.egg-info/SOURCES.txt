@@ -1,0 +1,8 @@
+setup.py
+iws_tools/__init__.py
+iws_tools/configuration.py
+iws_tools/heartbeat.py
+iws_tools.egg-info/PKG-INFO
+iws_tools.egg-info/SOURCES.txt
+iws_tools.egg-info/dependency_links.txt
+iws_tools.egg-info/top_level.txt
