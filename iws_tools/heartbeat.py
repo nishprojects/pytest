@@ -4,22 +4,22 @@ import time
 import json
 from threading import Thread, Event
 from pathlib import Path
-import inspect
+
 
 class Heartbeat:
-    def __init__(self, server_ip=None, server_port=None, host_name=None, hasSettings=False, pub_callback=None, hourOffset=None):
+    def __init__(self, server_ip=None, server_port=None, host_name=None, hasSettings=False, heartabeat_timer = 5, pub_callback=None, hourOffset=None):
         self.server_ip = server_ip
         self.server_port = server_port
         self.pub_callback = pub_callback
         self.host_name = host_name
         self.hasSettings = hasSettings
+        self.heartabeat_timer = int(heartabeat_timer)
         self.rc = 0
         if self.pub_callback is None:
             self.rc = 1
         self.event = Event()
         self.hourOffset = hourOffset
-        directory_name = inspect.getfile(inspect.currentframe())
-        ver_path = Path(directory_name).parent / 'version.txt'
+        ver_path = Path('~').parent / 'version.txt'
         try:
             ver_file = open(ver_path, "r")
             self.version = ver_file.read().strip()
