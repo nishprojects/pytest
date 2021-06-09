@@ -50,8 +50,8 @@ class Heartbeat:
                 except:
                     ip_addr = socket.gethostbyname(self.host_name)
                 heartbeat.update({'hostName': self.host_name,
-                                'ipAddress': ip_addr,
-                                  'hasSettings':self.hasSettings})
+                                  'ipAddress': ip_addr,
+                                  'hasSettings':self.hasSettings,})
             if self.hourOffset is not None:
                 localTime = datetime.utcnow()+ timedelta(hours=self.hourOffset)
                 last_heartbeat = localTime.isoformat(sep=' ', timespec='milliseconds')
