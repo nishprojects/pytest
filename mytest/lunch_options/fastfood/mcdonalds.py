@@ -1,0 +1,2 @@
+def food():
+    print('McRib')
